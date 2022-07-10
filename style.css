@@ -1,15 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;600&family=Poppins:wght@400;500;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/credit-card');
+:root{
+  --nav-color: #e3fdfd;
+  --cont-color: #f9f7f7;
+  --navdark-color: #424242;
+  --contdark-color: #1c1c1c;
+}
+
 * {
     box-sizing: border-box;
-  }
-  
-  body {
     margin: 0;
     padding: 0;
+    font-family: 'Alber Sans', sans-serif;
+    
   }
+html::-webkit-scrollbar{
+  width: 0.6rem;
+}
+html::-webkit-scrollbar-thumb{
+  background: linear-gradient(rgb(111, 110, 110) , #000);
+  border-radius: 12px;
+}
+html::-webkit-scrollbar-track{
+  background: #e3fdfd;
+  
+}
   
   .toolbox-cont{
-    height:5rem;
-    background-color: #4b4b4b;
+    height:4rem;
+    background: var(--contdark-color);
     display: flex;
     align-items: center;
   }
@@ -19,140 +38,195 @@
   }
   
   .toolbox-color-cont{
-    height:3.5rem;
+    height:3rem;
     width:18rem;
-    background-color: #3d3d3d;
+    background-color: var(--navdark-color);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    border-radius: 3px;
   }
   
   .action-btn-cont{
-    height:3.5rem;
+    height:3rem;
     width:7rem;
-    background-color: #3d3d3d;
+    background-color: var(--navdark-color);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    border-radius: 3px;
   }
   
   .color{
     height:1.5rem;
-    width:3rem;
+    width:2rem;
+    border-radius: 3px;
+    transition: all 0.4s ease-in-out;
+  }
+  .color:hover, .priority-color:hover{
+    transform: scale(1.3) rotate(-360deg);
   }
   
   .lightpink{
-    background-color: lightpink;
+    background: linear-gradient( 90deg , rgb(254, 138, 155) , rgb(252, 51, 85));
   }
   .lightgreen{
-    background-color: lightgreen;
+    background: linear-gradient( 90deg , rgb(126, 254, 126) , rgb(3, 140, 3));
   }
   .lightblue{
-    background-color: lightblue;
+    background: linear-gradient( 90deg , rgb(125, 127, 249) , rgb(0, 0, 255));
   }
   .black{
-    background-color: black;
+    background: linear-gradient( 90deg , rgb(115, 108, 108) , rgb(0, 0, 0));
   }
   
   .action-btn-cont>*{
     font-size: 2rem;
-    color: #d1d8e0;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
     height: 100%;
+    z-index: 2;
   }
   
-  .toolbox-color-cont>*:hover, .action-btn-cont>*:hover{
-    background-color: #485460;
-  }
   
+  .modal-wrapper{
+    display: none;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50% , -50%);
+  }
   .modal-cont{
+    z-index: 5;
     height:50vh;
     width:45vw;
-    background-color: lightblue;
-    position: absolute;
-    top:calc((100vh - 50vh)/2);
-    left:calc((100vw - 45vw)/2);
-    display: none;
+    min-width: 500px;
+    display: flex;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0px 25px rgba(0, 0, 0, 0.3);
   }
   
   textarea{
     height:100%;
-    width:75%;
-    background-color:#dfe4ea ;
+    flex:5;
+    background-color:#c6ffde ;
     font-size:2rem;
     border:none;
     outline:none;
     resize: none;
+    padding: 1rem;
+    
   }
   
   .priority-color-cont{
     height:100%;
-    width:25%;
+    flex:1;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #4b4b4b;
+    background-color: #3c3c3c;
   }
   
   .priority-color{
-    height: 10%;
-    width:38%;
+    height: 8%;
+    width:40%;
+    border-radius: 3px;
+    transition: all 0.4s ease-in-out;
   }
   
   .active{
-    border: 5px solid black;
+    /* transform: skew(10deg); */
+    border-bottom-left-radius: 15px;
+    transform: scale(1.5)
   }
   
   
   .ticket-cont{
     height: 12rem;
-    width:15rem;
-    background-color: #f1f2f6;
+    width:20rem;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease-in-out ;
   }
   
+  .ticket-cont:hover{
+    transform: scale(1.03) ;
+  }
   .ticket-color{
-    height:1rem;
-    /* background-color: black; */
+    height: 1rem ;
+    border-radius: 3px;
+    opacity: 1;
+    background: linear-gradient(90deg , rgba(0 ,0,0,0),rgba(242, 203, 48, 0.5),#FCF6BA,#B38728,#AA771C);
+    
   }
   
   .ticket-id{
-    height:2rem;
-    background-color: red;
+    height: 2rem ;
+    border-radius: 3px ;
+    font-family: 'Credit Card', sans-serif;
   }
   
   .task-area{
-    height: calc(100% - 1rem - 2rem);
-    font-size: 1.5rem;
-    outline: none;
-    overflow-wrap: break-word;
+    height: calc(100% - 1rem - 2rem) ;
+    font-size: 1.5rem ;
+    outline: none ;
+    overflow-wrap: break-word ;
+    color: azure;
+    
   }
   
   .ticket-lock{
-    display: flex;
-    justify-content: flex-end;
-    height: 2rem;
+    display: flex ;
+    justify-content: flex-end ;
+    height: 2rem ;
     margin-top:-20px ;
+    color: #000;
   }
-  
-  
-  
-  
-  
-  
-  
   
   .main-cont{
     display:flex;
-    justify-content: center;
-    gap:2rem ;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    width: 100%;
+    background: var(--cont-color);
+  }
+
+  @media screen and (max-width: 1000px) {
+    .ticket-cont{
+      width: 23%;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .ticket-cont{
+      width: 30%;
+    }
+  }
+  @media screen and (max-width: 65rem) {
+    .ticket-cont{
+      width: 40%;
+    }
+  }
+  @media screen and (max-width: 45rem) {
+    .ticket-cont{
+      width: 75%;
+    }
+    .toolbox-cont>*{
+      margin-left: 0;
+    }
+    .toolbox-cont{
+      justify-content: space-evenly;
+    }
   }
   
-  
+
   
   
   

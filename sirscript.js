@@ -1,6 +1,6 @@
 var uid = new ShortUniqueId();
 const addBtn = document.querySelector(".add-btn");
-const modalCont = document.querySelector(".modal-cont");
+const modalCont = document.querySelector(".modal-wrapper");
 const allPriorityColors = document.querySelectorAll(".priority-color");
 let colors = ["lightpink", "lightgreen", "lightblue", "black"];
 let modalPriorityColor = colors[colors.length - 1]; //black
@@ -16,9 +16,11 @@ let unlockClass = "fa-lock-open";
 let isModalPresent = false;
 addBtn.addEventListener("click", function () {
   if (!isModalPresent) {
-    modalCont.style.display = "flex"; //modal add ho gya screen pe
+    addBtn.style.color = '#0085ff';
+    modalCont.style.display = "block"; //modal add ho gya screen pe
     // isModalPresent = true;
   } else {
+    addBtn.style.color = '#fff'
     modalCont.style.display = "none";
     // isModalPresent = false;
   }
@@ -46,6 +48,7 @@ modalCont.addEventListener("keydown", function (e) {
     console.log(textAreaCont.value);
     createTicket(modalPriorityColor, textAreaCont.value);
     modalCont.style.display = "none";
+    addBtn.style.color = "#ffffff"
     isModalPresent = false;
     textAreaCont.value = "";
     allPriorityColors.forEach(function (colorElem) {
@@ -59,8 +62,9 @@ function createTicket(ticketColor, data, ticketId) {
     let id = ticketId || uid();
     let ticketCont = document.createElement("div"); //<div></div>
     ticketCont.setAttribute("class", "ticket-cont");
+    ticketCont.classList.add(ticketColor);
     ticketCont.innerHTML = `
-        <div class="ticket-color ${ticketColor} "></div>
+        <div class="ticket-color ${ticketColor}"></div>
         <div class="ticket-id">${id}</div>
         <div class="task-area">${data}</div>
         <div class="ticket-lock">
@@ -143,7 +147,7 @@ removeBtn.addEventListener("click", function () {
         removeBtn.style.color = "white";
     }
     else {
-        removeBtn.style.color = "red";
+        removeBtn.style.color = "black";
     }
     removeBtnActive = !removeBtnActive;
 });

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,45 +11,53 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <!-- NavBar -->
-    <div class="toolbox-cont">
-        <div class="toolbox-color-cont">
-            <div class="lightpink color"></div>
-            <div class="lightgreen color"></div>
-            <div class="lightblue color"></div>
-            <div class="black color"></div>
-        </div>
-        <div class="action-btn-cont">
-            <div class="add-btn">
-                <i class="fa-solid fa-plus"></i>
+    <nav>
+        <div class="toolbox-cont">
+            <div class="reddot"></div>
+            <div class="toolbox-color-cont">
+                <div class="lightpink color"></div>
+                <div class="lightgreen color"></div>
+                <div class="lightblue color"></div>
+                <div class="black color"></div>
             </div>
-            <div class="remove-btn">
-            <i class="fa-solid fa-xmark"></i>
+            <div class="action-btn-cont">
+                <div class="add-btn">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="remove-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
             </div>
         </div>
-    </div>
-
+    </nav>
     
+
+
 
     <!-- Todo Box Space-->
     <div class="main-cont">
-<!-- inside this container all my tickets will be attached  -->
+        <!-- inside this container all my tickets will be attached  -->
     </div>
 
     <!-- Modal Container -->
-    <div class="modal-cont">
-        <textarea class="textarea-cont"placeholder="Enter Your Task"></textarea>
-        <div class="priority-color-cont">
-            <div class="lightpink priority-color "></div>
-            <div class="lightgreen priority-color "></div>
-            <div class="lightblue priority-color "></div>
-            <div class="black priority-color "></div>
+    <div class="modal-wrapper">
+        <div class="modal-cont">
+            <textarea class="textarea-cont" placeholder="Enter Your Task"></textarea>
+            <div class="priority-color-cont">
+                <div class="lightpink priority-color"></div>
+                <div class="lightgreen priority-color"></div>
+                <div class="lightblue priority-color"></div>
+                <div class="black priority-color"></div>
+            </div>
         </div>
     </div>
+    
 
-    <!-- ticket container --> 
-    <!-- <div class="ticket-cont">
+    <!-- ticket container -->
+    <!-- <div class="ticket-cont ">
         <div class="ticket-color"></div>
         <div class="ticket-id"></div>
         <div class="task-area"></div>
@@ -56,4 +65,5 @@
     <script src="https://cdn.jsdelivr.net/npm/short-unique-id@latest/dist/short-unique-id.min.js"></script>
     <script src="./sirscript.js"></script>
 </body>
+
 </html>
