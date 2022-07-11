@@ -16,7 +16,7 @@ let unlockClass = "fa-lock-open";
 let isModalPresent = false;
 addBtn.addEventListener("click", function () {
   if (!isModalPresent) {
-    addBtn.style.color = '#0085ff';
+    addBtn.style.color = '#ffc310';
     modalCont.style.display = "block"; //modal add ho gya screen pe
     // isModalPresent = true;
   } else {
@@ -44,13 +44,17 @@ allPriorityColors.forEach(function (colorElement) {
 modalCont.addEventListener("keydown", function (e) {
   let key = e.key;
   if (key == "Shift") {
-    console.log(modalPriorityColor);
-    console.log(textAreaCont.value);
-    createTicket(modalPriorityColor, textAreaCont.value);
-    modalCont.style.display = "none";
-    addBtn.style.color = "#ffffff"
-    isModalPresent = false;
-    textAreaCont.value = "";
+    // console.log(modalPriorityColor);
+    // console.log(textAreaCont.value);
+    if(textAreaCont.value === ''){
+      alert('Please enter Task')
+    }else{
+      createTicket(modalPriorityColor, textAreaCont.value);
+      modalCont.style.display = "none";
+      addBtn.style.color = "#ffffff"
+      isModalPresent = false;
+      textAreaCont.value = "";
+    }
     allPriorityColors.forEach(function (colorElem) {
       colorElem.classList.remove("active");
     });
@@ -144,10 +148,10 @@ for (let i = 0; i < toolBoxColors.length; i++){
 let removeBtnActive = false;
 removeBtn.addEventListener("click", function () {
     if (removeBtnActive) {
-        removeBtn.style.color = "white";
+        removeBtn.style.color = "#fff";
     }
     else {
-        removeBtn.style.color = "black";
+        removeBtn.style.color = "#ffc310";
     }
     removeBtnActive = !removeBtnActive;
 });
